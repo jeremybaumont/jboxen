@@ -65,3 +65,7 @@ github "xquartz",     "1.2.1"
 # github "postgresql",  "4.0.1"
 # github "redis",       "3.1.0"
 # github "sysctl",      "1.0.1"
+
+github "chrome", "1.2.0"
+github "property_list_key", "0.2.1", :repo => "glarizza/puppet-property_list_key"
+github "osx", "2.8.0"

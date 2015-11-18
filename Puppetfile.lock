@@ -9,6 +9,11 @@ GITHUBTARBALL
     brewcask (0.0.6)
 
 GITHUBTARBALL
+  remote: boxen/puppet-chrome
+  specs:
+    chrome (1.2.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-dnsmasq
   specs:
     dnsmasq (2.0.1)
@@ -59,6 +64,11 @@ GITHUBTARBALL
     openssl (1.0.0)
 
 GITHUBTARBALL
+  remote: boxen/puppet-osx
+  specs:
+    osx (2.8.0)
+
+GITHUBTARBALL
   remote: boxen/puppet-phantomjs
   specs:
     phantomjs (3.0.0)
@@ -89,6 +99,11 @@ GITHUBTARBALL
     xquartz (1.2.1)
 
 GITHUBTARBALL
+  remote: glarizza/puppet-property_list_key
+  specs:
+    property_list_key (0.2.1)
+
+GITHUBTARBALL
   remote: puppetlabs/puppetlabs-inifile
   specs:
     inifile (1.4.1)
@@ -106,6 +121,7 @@ GITHUBTARBALL
 DEPENDENCIES
   boxen (= 3.11.0)
   brewcask (= 0.0.6)
+  chrome (= 1.2.0)
   dnsmasq (= 2.0.1)
   foreman (= 1.2.0)
   gcc (= 3.0.2)
@@ -118,8 +134,10 @@ DEPENDENCIES
   nginx (= 1.6.0)
   nodejs (= 5.0.0)
   openssl (= 1.0.0)
+  osx (= 2.8.0)
   phantomjs (= 3.0.0)
   pkgconfig (= 1.0.0)
+  property_list_key (= 0.2.1)
   repository (= 2.4.1)
   ruby (= 8.5.3)
   stdlib (= 4.7.0)
