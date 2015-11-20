@@ -8,4 +8,8 @@ class people::jeremybaumont::applications {
   package { 'tree': 
     ensure => installed,
   }
+
+  package { 'wget': 
+    ensure => installed,
+  }
 }

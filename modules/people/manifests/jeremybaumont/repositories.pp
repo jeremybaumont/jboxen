@@ -19,6 +19,19 @@ class people::jeremybaumont::repositories (
     target  => "${::boxen_srcdir}/puppet/ext/envpuppet",
     require => Repository["${::boxen_srcdir}/puppet"],
   }
+ 
+  # My personal scripts under $HOME/bin
+  repository { "${my_sourcedir}/bin":
+    source => 'jeremybaumont/bin',
+    ensure => 'origin/master',
+  }
+
+  file { "${my_homedir}/bin":
+    ensure  => link,
+    mode    => '0644',
+    target  => "${my_sourcedir}/bin",
+    require => Repository["${my_sourcedir}/bin"],
+  }
 
   # My dotfiles repository
   repository { "${my_sourcedir}/dotfiles":
