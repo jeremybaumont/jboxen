@@ -4,4 +4,8 @@ class people::jeremybaumont::applications {
   package { 'tmux': 
     ensure => installed,
   }
+
+  package { 'tree': 
+    ensure => installed,
+  }
 }
