@@ -6,8 +6,20 @@ class people::jeremybaumont::repositories (
 
   # Git config and repositories #
 
-  git::config::global{ 'user.name':
+  git::config::global { 'user.name':
     value => 'Jeremy Baumont',
+  }
+
+  git::config::global { 'core.editor':
+    value => 'vim',
+  }
+
+  git::config::global { 'core.whitespace':
+    value => 'fix,-indent-with-non-tab,trailing-space,cr-at-eol',
+  }
+ 
+  git::config::global { 'fetch.recurseSubmodules':
+    value => 'yes',
   }
 
   git::config::global { 'alias.lg':
