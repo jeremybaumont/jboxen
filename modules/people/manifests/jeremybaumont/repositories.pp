@@ -4,6 +4,108 @@ class people::jeremybaumont::repositories (
   $my_username  = $people::jeremybaumont::params::my_username
 ) {
 
+  # Git config and repositories #
+
+  git::config::global{ 'user.name':
+    value => 'Jeremy Baumont',
+  }
+
+  git::config::global { 'alias.lg':
+    value => "log --pretty=format:'%C(yellow)%h%C(reset) %s %C(cyan)%cr%C(reset) %C(blue)%an%C(reset) %C(green)%d%C(reset)' --graph --date-order",  }
+
+  git::config::global { 'alias.review':
+    value => 'log -p --reverse -M -C -C --patience --no-prefix',
+  }
+
+  git::config::global{ 'user.email':
+    value => 'jeremy.baumont@gmail.com',
+  }
+
+  git::config::global{ 'color.ui':
+    value => 'auto',
+  }
+
+  git::config::global { 'alias.ll':
+    value => 'log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat',
+  }
+
+  git::config::global { 'alias.show-graph':
+    value => 'log --graph --abbrev-commit --pretty=oneline',
+  }
+
+  git::config::global { 'alias.ls':
+    value => 'log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate',
+  }
+
+  git::config::global { 'alias.lnc':
+    value => 'log --pretty=format:"%h\\ %s\\ [%cn]"',
+  }
+
+  git::config::global { 'alias.lds':
+    value => 'log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short',
+  }
+
+  git::config::global { 'alias.ld':
+    value => 'log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative',
+  }
+
+  git::config::global { 'alias.dl':
+    value => '"!git ll -1"',
+  }
+
+  git::config::global { 'alias.dr':
+    value => '"!f() { git diff "$1"^.."$1"; }; f"',
+  }
+
+  git::config::global { 'alias.lcr':
+    value => '"!f() { git ll "$1"^.."$1"; }; f"',
+  }
+
+  git::config::global { 'alias.diffr':
+    value => '"!f() { git diff "$1"^.."$1"; }; f"',
+  }
+
+  git::config::global { 'alias.f':
+    value => '"!git ls-files | grep -i"',
+  }
+
+  git::config::global { 'alias.la':
+    value => '"!git config -l | grep alias | cut -c 7-"',
+  }
+
+  git::config::global { 'alias.cp':
+    value => 'cherry-pick',
+  }
+
+  git::config::global { 'alias.st':
+    value => 'status -s',
+  }
+
+  git::config::global { 'alias.co':
+    value => 'checkout',
+  }
+
+  git::config::global { 'alias.br':
+    value => 'branch',
+  }
+
+  git::config::global { 'alias.cl':
+    value => 'clone',
+  }
+
+  git::config::global { 'alias.ci':
+    value => 'commit',
+  }
+
+  git::config::global { 'alias.diff':
+    value => 'diff --word-diff',
+  }
+
+  git::config::global { 'alias.dc':
+    value => 'diff --cached',
+  }
+
+
   # Facter, puppet and envpuppet
   repository { "${::boxen_srcdir}/puppet":
     source => 'puppetlabs/puppet',
