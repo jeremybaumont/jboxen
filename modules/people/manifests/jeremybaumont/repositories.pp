@@ -160,6 +160,24 @@ class people::jeremybaumont::repositories (
     require => Repository["${my_sourcedir}/dotfiles"],
   }
 
+  file { "${my_homedir}/.vimrc":
+    ensure  => link,
+    mode    => '0644',
+    target  => "${my_sourcedir}/dotfiles/dot-vimrc",
+    require => Repository["${my_sourcedir}/dotfiles"],
+  }
+
+  repository { "${my_sourcedir}/dot-vim":
+    source => 'jeremybaumont/dot-vim',
+  }
+
+  file { "/Users/${my_username}/.vim":
+    ensure  => link,
+    mode    => '0644',
+    target  => "${my_sourcedir}/dot-vim",
+    require => Repository["${my_sourcedir}/dot-vim"],
+  }
+
   repository { "${my_sourcedir}/dot-bashrc.d":
     source => 'jeremybaumont/dot-bashrc.d',
   }
