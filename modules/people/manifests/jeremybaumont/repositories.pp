@@ -195,6 +195,17 @@ class people::jeremybaumont::repositories (
     target  => "${my_sourcedir}/dot-bashrc.d",
     require => Repository["${my_sourcedir}/dot-bashrc.d"],
   }
+  
+  file { "${my_sourcedir}/dot-bashrc-work.d":
+    ensure => directory,
+  }
+
+  file { "/Users/${my_username}/.bashrc-work.d":
+    ensure  => link,
+    mode    => '0644',
+    target  => "${my_sourcedir}/dot-bashrc-work.d",
+    require => File["${my_sourcedir}/dot-bashrc-work.d"],
+  }
 
   file { "/Users/${my_username}/.bashrc":
     ensure  => link,
