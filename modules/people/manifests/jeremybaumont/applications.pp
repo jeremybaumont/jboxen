@@ -1,7 +1,7 @@
 class people::jeremybaumont::applications {
   include chrome
-  include java
   include iterm2::stable
+  include brewcask
 
   package { 'tmux': 
     ensure => installed,
@@ -14,4 +14,17 @@ class people::jeremybaumont::applications {
   package { 'wget': 
     ensure => installed,
   }
+
+  package { 'jenv': 
+    ensure => installed,
+  }
+
+  package { 'java':
+    provider => 'brewcask',
+  }
+
+  package { 'java7':
+    provider => 'brewcask',
+  }
+
 }

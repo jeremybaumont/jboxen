@@ -54,11 +54,6 @@ GITHUBTARBALL
     iterm2 (1.2.5)
 
 GITHUBTARBALL
-  remote: boxen/puppet-java
-  specs:
-    java (1.8.4)
-
-GITHUBTARBALL
   remote: boxen/puppet-nginx
   specs:
     nginx (1.6.0)
@@ -131,6 +126,7 @@ GITHUBTARBALL
 DEPENDENCIES
   boxen (= 3.11.0)
   brewcask (= 0.0.6)
+  brewcask (= 0.0.6)
   chrome (= 1.2.0)
   dnsmasq (= 2.0.1)
   foreman (= 1.2.0)
@@ -141,7 +137,6 @@ DEPENDENCIES
   hub (= 1.4.1)
   inifile (= 1.4.1)
   iterm2 (= 1.2.5)
-  java (= 1.8.4)
   module_data (= 0.0.4)
   nginx (= 1.6.0)
   nodejs (= 5.0.0)
