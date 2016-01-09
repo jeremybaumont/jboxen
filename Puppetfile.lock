@@ -49,6 +49,11 @@ GITHUBTARBALL
     hub (1.4.1)
 
 GITHUBTARBALL
+  remote: boxen/puppet-iterm2
+  specs:
+    iterm2 (1.2.5)
+
+GITHUBTARBALL
   remote: boxen/puppet-java
   specs:
     java (1.8.4)
@@ -135,6 +140,7 @@ DEPENDENCIES
   homebrew (= 1.13.0)
   hub (= 1.4.1)
   inifile (= 1.4.1)
+  iterm2 (= 1.2.5)
   java (= 1.8.4)
   module_data (= 0.0.4)
   nginx (= 1.6.0)
