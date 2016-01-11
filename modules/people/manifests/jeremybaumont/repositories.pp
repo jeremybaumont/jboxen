@@ -216,4 +216,18 @@ class people::jeremybaumont::repositories (
     require => Repository["${my_sourcedir}/dotfiles"],
   }
 
+# git completion
+  repository { "${my_sourcedir}/git":
+    source => 'git/git',
+    ensure => 'origin/master',
+  }
+
+  file { "/Users/${my_username}/.git-completion.bash":
+    ensure => link,
+    mode   => '0644',
+    target  => "${my_sourcedir}/git/contrib/completion/git-completion.bash",
+    require => Repository["${my_sourcedir}/git"],
+  }
+   
 }
+
