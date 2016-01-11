@@ -217,7 +217,7 @@ class people::jeremybaumont::repositories (
   }
 
 # bin directory structures for work
-  file { "${my_sourcedir}/bin-work":
+  file { "${my_username}/bin-work":
     ensure => directory,
   }
 
