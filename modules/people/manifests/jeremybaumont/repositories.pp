@@ -169,6 +169,7 @@ class people::jeremybaumont::repositories (
 
   repository { "${my_sourcedir}/dot-vim":
     source => 'jeremybaumont/dot-vim',
+    ensure => 'origin/master',
   }
 
   file { "/Users/${my_username}/.vim":
@@ -180,6 +181,7 @@ class people::jeremybaumont::repositories (
 
   repository { "${my_sourcedir}/dot-bashrc.d":
     source => 'jeremybaumont/dot-bashrc.d',
+    ensure => 'origin/master',
   }
  
   file { "/Users/${my_username}/.bash_profile":
