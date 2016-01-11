@@ -27,4 +27,7 @@ class people::jeremybaumont::applications {
     provider => 'brewcask',
   }
 
+  package { 'mvnvm': 
+    ensure => installed,
+  }
 }
