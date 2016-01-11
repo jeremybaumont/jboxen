@@ -216,6 +216,11 @@ class people::jeremybaumont::repositories (
     require => Repository["${my_sourcedir}/dotfiles"],
   }
 
+# bin directory structures for work
+  file { "${my_sourcedir}/bin-work":
+    ensure => directory,
+  }
+
 # git completion
   repository { "${my_sourcedir}/git":
     source => 'git/git',
