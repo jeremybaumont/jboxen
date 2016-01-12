@@ -3,6 +3,11 @@ class people::jeremybaumont::applications {
   include iterm2::stable
   include brewcask
 
+  class { 'virtualbox':
+    version => '5.0.12',
+    patch_level => '104815'
+  }
+
   package { 'tmux': 
     ensure => installed,
   }
