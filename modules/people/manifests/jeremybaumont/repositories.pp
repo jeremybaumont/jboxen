@@ -233,6 +233,11 @@ class people::jeremybaumont::repositories (
     target  => "${my_sourcedir}/git/contrib/completion/git-completion.bash",
     require => Repository["${my_sourcedir}/git"],
   }
+
+# jenv
+  file { "${my_sourcedir}/.jenv":
+    ensure => directory,
+  }
    
 }
 
