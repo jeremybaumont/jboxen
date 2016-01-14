@@ -39,4 +39,8 @@ class people::jeremybaumont::applications {
   package { 'mvnvm': 
     ensure => installed,
   }
+
+  package { 'npm': 
+    ensure => installed,
+  }
 }
