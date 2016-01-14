@@ -43,4 +43,9 @@ class people::jeremybaumont::applications {
   package { 'npm': 
     ensure => installed,
   }
+  
+  package { 'nvm': 
+    ensure => installed,
+  }
+
 }
