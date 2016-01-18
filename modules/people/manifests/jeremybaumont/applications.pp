@@ -40,11 +40,15 @@ class people::jeremybaumont::applications {
     ensure => installed,
   }
 
-  package { 'npm': 
+  package { 'nvm': 
     ensure => installed,
   }
   
-  package { 'nvm': 
+  package { 'scala':
+    ensure => installed,
+  }
+
+  package { 'sbt':
     ensure => installed,
   }
 
