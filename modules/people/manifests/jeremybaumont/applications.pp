@@ -52,4 +52,8 @@ class people::jeremybaumont::applications {
     ensure => installed,
   }
 
+  package { 'gradle':
+    ensure => installed,
+  }
+
 }
