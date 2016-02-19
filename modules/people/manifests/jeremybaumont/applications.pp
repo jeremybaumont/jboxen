@@ -60,4 +60,8 @@ class people::jeremybaumont::applications {
     ensure => installed,
   }
 
+  package { 'pyqt':
+    ensure => installed,
+  }
+
 }
