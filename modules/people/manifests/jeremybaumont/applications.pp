@@ -59,4 +59,5 @@ class people::jeremybaumont::applications {
   package { 'autossh':
     ensure => installed,
   }
+
 }
