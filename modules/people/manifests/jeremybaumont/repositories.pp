@@ -6,12 +6,32 @@ class people::jeremybaumont::repositories (
 
   # Git config and repositories #
 
+  git::config::global { 'diff.renames':
+    value => 'copy',
+  }
+
+  git::config::global { 'diff.renamelimit':
+    value => '10000',
+  }
+
+  git::config::global { 'log.decorate':
+    value => 'full',
+  }
+
+  git::config::global { 'push.default':
+    value => 'simple',
+  }
+
   git::config::global { 'user.name':
     value => 'Jeremy Baumont',
   }
 
   git::config::global { 'core.editor':
     value => 'vim',
+  }
+
+  git::config::global { 'core.pager':
+    value => 'less -+F -+X',
   }
 
   git::config::global { 'core.whitespace':
@@ -22,8 +42,40 @@ class people::jeremybaumont::repositories (
     value => 'yes',
   }
 
-  git::config::global { 'alias.lg':
+  git::config::global { 'alias.lgp':
     value => "log --pretty=format:'%C(yellow)%h%C(reset) %s %C(cyan)%cr%C(reset) %C(blue)%an%C(reset) %C(green)%d%C(reset)' --graph --date-order",  }
+
+  git::config::global { 'alias.lg1':
+    value => "log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all",
+   }
+
+  git::config::global { 'alias.lg2':
+    value => "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all",
+   }
+
+  git::config::global { 'alias.lg':
+    value => '!"git lg1"',
+   }
+
+  git::config::global { 'alias.dic':
+    value => 'diff --cached',
+   }
+
+  git::config::global { 'alias.dicw':
+    value => 'diff --cached --color-words',
+   }
+
+  git::config::global { 'alias.ff':
+    value => 'merge --ff-only',
+   }
+
+  git::config::global { 'alias.ffpull':
+    value => 'pull --ff-only',
+   }
+
+  git::config::global { 'alias.lso':
+    value => 'ls-files -X .gitignore -o',
+   }
 
   git::config::global { 'alias.review':
     value => 'log -p --reverse -M -C -C --patience --no-prefix',
