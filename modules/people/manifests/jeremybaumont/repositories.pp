@@ -137,6 +137,15 @@ class people::jeremybaumont::repositories (
     value => '"!git config -l | grep alias | cut -c 7-"',
   }
 
+  git::config::global { 'alias.l':
+    value => 'log --pretty=oneline -n 20 --graph --abbrev-commit',
+  }
+  
+  git::config::global { 'alias.d':
+    value => '!"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"',
+  }
+  
+
   git::config::global { 'alias.cp':
     value => 'cherry-pick',
   }
